@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+
+            *{
+                text-align: center
+            }
+            h1 {
+                display: inline-block;
+                color: {{color1}};
+                background-color: {{color2}} ;
+                padding: 15px;
+            }
+            .row {
+                display: flex;
+                flex-direction:row;
+                justify-content:center;
+            }
+            .inn0 {
+                height: 40px;
+                width: 40px;
+                background-color:{{color2}};
+            }
+            .inn1 {
+                height: 40px;
+                width: 40px;
+                background-color: {{color1}};
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>***Checkerboard***</h1>
+        <div class="maincontainer">
+            {% for i in range ( valY ) %}
+            <div class="row">
+                {% for j in range ( valX ) %}
+                <div class="inn{{ (i+j)%2}}"></div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
